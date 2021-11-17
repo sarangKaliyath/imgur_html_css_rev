@@ -79,6 +79,8 @@ function showData() {
 
 showData();
 
+let my
+
 async function getData(page) {
   await fetch(
     `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=L&client_id=key`
