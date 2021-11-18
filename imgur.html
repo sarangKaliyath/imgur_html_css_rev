@@ -62,13 +62,20 @@
 
         <div class="mid_nav">
           <div class="search_box">
-            <input type="text" placeholder="images, #tags, @users oh my!" />
+            <input
+              type="text"
+              id="search_data"
+              placeholder="images, #tags, @users oh my!"
+              oninput="throttleFunction()"
+            />
             <button>
               <img
                 src="https://s.imgur.com/desktop-assets/desktop-assets/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg"
               />
             </button>
           </div>
+
+          <div class="search_content"></div>
         </div>
         <div class="right_nav">
           <svg

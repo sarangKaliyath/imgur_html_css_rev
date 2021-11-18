@@ -98,7 +98,7 @@ change_page();
 
 async function getData(page) {
   let my_data = [];
-  console.log("getData", page);
+  // console.log("getData", page);
   await fetch(
     `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=L&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
   )
@@ -114,7 +114,7 @@ let page = 1;
 // getData(page);
 
 async function showData(data) {
-  console.log(data);
+  // console.log(data);
 
   let main_div = document.querySelector(".data_container");
 
@@ -178,3 +178,66 @@ async function showData(data) {
 }
 
 showData();
+
+let timerId;
+
+let temp = document.querySelector(".search_content");
+temp.style.display = "none";
+
+function throttleFunction() {
+  if (timerId) {
+    return false;
+  }
+
+  setTimeout(() => {
+    searchData();
+    timerId = null;
+  }, 1000);
+}
+
+async function searchData() {
+  let search_arr = [];
+
+  let val = document.querySelector(".search_content");
+
+  let query = document.getElementById("search_data").value;
+
+  if (query.length <= 2) return false;
+  else val.style.display = "block";
+
+  let temp = await fetch(
+    `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
+  );
+
+  let data = await temp.json();
+  console.log(data.results);
+  if (data) {
+    appendSearchData(data.results);
+  }
+}
+
+async function appendSearchData(data) {
+  let main_div = document.querySelector(".search_content");
+
+  main_div.innerHTML = null;
+
+  main_div.style.overflow = "scroll";
+  // main_div.style.padding = "0% 2%"
+
+  data.map(
+    ({
+      alt_description,
+      user: {
+        username,
+        profile_image: { small },
+      },
+    }) => {
+      let sub_div = document.createElement("div");
+
+      sub_div.innerHTML = alt_description;
+      sub_div.style.padding = "2%";
+
+      main_div.append(sub_div);
+    }
+  );
+}
