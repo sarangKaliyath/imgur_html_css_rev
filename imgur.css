@@ -1,11 +1,12 @@
 body {
   padding: 0%;
   margin: 0%;
+  background-color: #2e3035;
 }
 .main_container {
   width: 99.5vw;
-  height: 1000vh;
-  background-color: #2e3035;
+  /* height: 1000vh; */
+  /* background-color: #2e3035; */
 }
 .navbar_container {
   width: 100%;
@@ -73,7 +74,6 @@ body {
 .new_post_button {
   width: 120px;
   height: 35px;
-  border: 1px solid #1bb76e;
   background-color: #1bb76e;
   justify-content: space-evenly;
   border-radius: 3px;
@@ -115,7 +115,6 @@ body {
   width: 95%;
   padding: 2%;
   height: 20px;
-  border: 1px solid red;
 }
 .search_box > input::placeholder {
   color: #9392a8;
@@ -136,7 +135,6 @@ body {
 }
 
 .add_free_button {
-  border: 1px solid black;
   background-color: #6432f9;
   width: 95px;
 }
@@ -166,7 +164,6 @@ body {
 .temp {
   width: 100%;
   height: 64px;
-  border: 1px solid white;
 }
 
 .temp + div {
@@ -182,7 +179,6 @@ body {
 }
 
 .explore_data {
-  border: 1px solid green;
   width: 100%;
   height: 40%;
   color: white;
@@ -197,7 +193,6 @@ body {
 }
 
 .box_div {
-  border: 1px solid red;
   width: 110px;
   height: 130px;
   text-align: center;
@@ -240,15 +235,9 @@ body {
   justify-content: space-between;
 }
 .explore_data + div {
-  border: 1px solid red;
   width: 80%;
   margin: auto;
   color: #fff;
-}
-
-.data_container {
-  border: 1px solid red;
-  height: 100%;
 }
 
 .viral_container {
@@ -289,12 +278,52 @@ body {
 
 .viral_new_first {
   width: 50px;
-  border: 1px solid green;
 }
 .viral_container_new {
-  border: 1px solid red;
 }
 
 .viral_new_images {
   width: 50%;
+}
+
+.data_container {
+  width: 99vw;
+  max-height: 1500px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center; */
+}
+
+.data_box {
+  width: 240px;
+  margin: 5px;
+  background-color: #474a51;
+  color: #fff;
+}
+.data_image {
+  max-width: 240px;
+}
+
+.dummy_div {
+  margin: 2% 0% 0% 0%;
+  width: 100%;
+  height: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.num_box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+}
+
+.download_box,
+.view_box,
+.comment_box {
+  display: flex;
+  height: 15px;
 }
